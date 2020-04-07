@@ -23,5 +23,7 @@ public class ClassesDAO {
         this.em.persist(racingClass);
     }
 
-    public RacingClass findOne(Integer id) { return em.find(RacingClass.class, id); }
+    public RacingClass findOne(Integer id) {
+        return em.find(RacingClass.class, id);
+    }
 }

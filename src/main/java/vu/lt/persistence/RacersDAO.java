@@ -1,6 +1,7 @@
 package vu.lt.persistence;
 
 import vu.lt.entities.Racer;
+import vu.lt.entities.RacingClass;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.persistence.EntityManager;
@@ -14,5 +15,9 @@ public class RacersDAO {
 
     public void persist(Racer racer){
         this.em.persist(racer);
+    }
+
+    public Racer findOne(Integer id) {
+        return em.find(Racer.class, id);
     }
 }
