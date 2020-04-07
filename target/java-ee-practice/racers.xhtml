@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head/>
+<h:body>
+    <h2>Racers racing in #{racersForClass.racingClass.name} class:</h2>
+    <ol>
+        <ui:repeat value="#{racersForClass.racingClass.racers}" var="racer">
+            <li>#{racer.name}</li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText a:placeholder="name" value="#{racersForClass.racerToCreate.name}" required="true" />
+        <h:commandButton value="Add racer to the class" action="#{racersForClass.createRacer}" >
+            <f:param name="classId" value="#{racersForClass.racingClass.id}" />
+        </h:commandButton>
+    </h:form>
+</h:body>
+</html>
