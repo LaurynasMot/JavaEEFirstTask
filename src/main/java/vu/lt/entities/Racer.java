@@ -7,6 +7,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @NamedQueries({
@@ -27,6 +28,9 @@ public class Racer implements Serializable {
     @ManyToOne
     @JoinColumn(name = "RACINGCLASS_ID")
     private RacingClass racingClass;
+
+    @OneToMany(mappedBy = "racer")
+    private Set<CoPilot> coPilots;
 
     public Racer(){
 
