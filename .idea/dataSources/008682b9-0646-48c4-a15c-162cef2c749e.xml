@@ -176,25 +176,28 @@
     <collation id="161" parent="2" name="UKRAINIAN_UKRAINE"/>
     <collation id="162" parent="2" name="VIETNAMESE"/>
     <collation id="163" parent="2" name="VIETNAMESE_VIETNAM"/>
-    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_230AF7C9_2522_49F0_A894_EF786D444C6B">
-      <ObjectId>4</ObjectId>
+    <sequence id="164" parent="4" name="SYSTEM_SEQUENCE_20FE8278_EF52_415A_B143_F667C018C859">
+      <ObjectId>7</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_F07ECE01_E1AE_4386_A18B_750E1533E737">
-      <ObjectId>8</ObjectId>
+    <sequence id="165" parent="4" name="SYSTEM_SEQUENCE_3DAACFA4_58C2_4099_AD19_284538DCED1D">
+      <ObjectId>11</ObjectId>
       <NameSurrogate>1</NameSurrogate>
       <SequenceIdentity>1</SequenceIdentity>
       <CacheSize>32</CacheSize>
       <AutoCreated>1</AutoCreated>
     </sequence>
-    <table id="166" parent="4" name="RACER">
+    <table id="166" parent="4" name="COPILOT">
       <ObjectId>3</ObjectId>
     </table>
-    <table id="167" parent="4" name="RACINGCLASS">
-      <ObjectId>7</ObjectId>
+    <table id="167" parent="4" name="RACER">
+      <ObjectId>6</ObjectId>
+    </table>
+    <table id="168" parent="4" name="RACINGCLASS">
+      <ObjectId>10</ObjectId>
     </table>
   </database-model>
 </dataSource>

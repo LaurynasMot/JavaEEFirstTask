@@ -10,7 +10,9 @@
     <h2>Racers racing in #{racersForClass.racingClass.name} class:</h2>
     <ol>
         <ui:repeat value="#{racersForClass.racingClass.racers}" var="racer">
-            <li>#{racer.name}</li>
+            <li>
+                <h:link value="#{racer.name}" outcome="copilots?racerId=#{racer.id}&amp;classId=#{racersForClass.racingClass.id}"/>
+            </li>
         </ui:repeat>
     </ol>
     <h:form>
