@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="JavaEEFirst" />
         <module name="untitled" />
+        <module name="JavaEEFirstTask" />
+        <module name="JavaEEFirst" />
       </profile>
     </annotationProcessing>
   </component>

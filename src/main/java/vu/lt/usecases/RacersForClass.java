@@ -15,6 +15,7 @@ import vu.lt.entities.Racer;
 import vu.lt.entities.RacingClass;
 import vu.lt.persistence.ClassesDAO;
 import vu.lt.persistence.RacersDAO;
+import vu.lt.services.CreateRandomCoPilot;
 
 @Model
 public class RacersForClass implements Serializable{
@@ -33,6 +34,7 @@ public class RacersForClass implements Serializable{
 
     @PostConstruct
     public void init() {
+
         Map<String, String> requestParameters =
                 FacesContext.getCurrentInstance().getExternalContext().getRequestParameterMap();
         Integer classId = Integer.parseInt(requestParameters.get("classId"));

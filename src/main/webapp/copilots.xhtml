@@ -7,11 +7,24 @@
       xmlns:f="http://java.sun.com/jsf/core">
 <h:head/>
 <h:body>
-    <h2>Co-Pilot racing in #{coPilots.racingClass.name} class with #{coPilots.racer.name} class:</h2>
+    <h2>Co-Pilot racing in #{coPilots.racingClass.name} class with #{coPilots.racer.name}:</h2>
     <h3>Current Co-Pilot: #{coPilots.currentCoPilot.name}</h3>
     <h:form>
         <h:inputText a:placeholder="name" value="#{coPilots.coPilotToCreate.name}" required="true" />
         <h:commandButton value="Add copilot to the class" action="#{coPilots.createCoPilot}" >
+            <f:param name="classId" value="#{coPilots.racingClass.id}" />
+            <f:param name="racerId" value="#{coPilots.racer.id}" />
+        </h:commandButton>
+    </h:form>
+    <h2>Get a new Co-Pilot:</h2>
+    <h:form>
+        <ol>
+            <ui:repeat value="#{createRandomCoPilot.allNames}" var="names">
+                #{names} <br />
+            </ui:repeat>
+        </ol>
+        <h:inputText a:placeholder="count" value="#{createRandomCoPilot.count}" required="true" />
+        <h:commandButton value="Create"  action="#{createRandomCoPilot.getRandomCoPilot}">
             <f:param name="classId" value="#{coPilots.racingClass.id}" />
             <f:param name="racerId" value="#{coPilots.racer.id}" />
         </h:commandButton>

@@ -10,8 +10,10 @@ import vu.lt.entities.keys.CoPilotKey;
 import vu.lt.persistence.ClassesDAO;
 import vu.lt.persistence.CoPilotsDAO;
 import vu.lt.persistence.RacersDAO;
+import vu.lt.services.CreateRandomCoPilot;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -30,6 +32,9 @@ public class CoPilots {
 
     @Inject
     private CoPilotsDAO coPilotsDAO;
+
+    @Inject
+    private CreateRandomCoPilot createRandomCoPilot;
 
     @Getter @Setter
     private RacingClass racingClass;
@@ -65,6 +70,11 @@ public class CoPilots {
 
     private void findCoPilot() {
         this.currentCoPilot = coPilotsDAO.findCoPilot(coPilotKey);
+    }
+
+    @PreDestroy
+    public void clearList(){
+        createRandomCoPilot.clearList();
     }
 
     @Transactional
