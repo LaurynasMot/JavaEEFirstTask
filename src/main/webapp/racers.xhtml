@@ -11,15 +11,24 @@
     <ol>
         <ui:repeat value="#{racersForClass.racingClass.racers}" var="racer">
             <li>
-                <h:link value="#{racer.name}" outcome="copilots?racerId=#{racer.id}&amp;classId=#{racersForClass.racingClass.id}"/>
+                <h:link value="#{racer.name} #{racer.licensePlate}"
+                        outcome="copilots?racerId=#{racer.id}&amp;classId=#{racersForClass.racingClass.id}"/>
             </li>
         </ui:repeat>
     </ol>
     <h:form>
-        <h:inputText a:placeholder="name" value="#{racersForClass.racerToCreate.name}" required="true" />
-        <h:commandButton value="Add racer to the class" action="#{racersForClass.createRacer}" >
-            <f:param name="classId" value="#{racersForClass.racingClass.id}" />
+        <h:inputText a:placeholder="name" value="#{racersForClass.racerToCreate.name}" required="true"/>
+        <h:commandButton value="Add racer to the class" action="#{racersForClass.createRacer}">
+            <f:param name="classId" value="#{racersForClass.racingClass.id}"/>
         </h:commandButton>
     </h:form>
+    <h2>Edit racers racing in #{racersForClass.racingClass.name} class:</h2>
+    <ol>
+        <ui:repeat value="#{racersForClass.racingClass.racers}" var="racer">
+            <li>
+                <h:link value="#{racer.name} #{racer.licensePlate}" outcome="racerDetails?racerId=#{racer.id}"/>
+            </li>
+        </ui:repeat>
+    </ol>
 </h:body>
 </html>

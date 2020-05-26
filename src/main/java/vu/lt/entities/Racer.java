@@ -29,8 +29,15 @@ public class Racer implements Serializable {
     @JoinColumn(name = "RACINGCLASS_ID")
     private RacingClass racingClass;
 
+    @Column(name = "LICENSE_PLATE")
+    private String licensePlate;
+
     @OneToMany(mappedBy = "racer")
     private Set<CoPilot> coPilots;
+
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
 
     public Racer(){
 

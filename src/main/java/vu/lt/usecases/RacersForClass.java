@@ -13,12 +13,13 @@ import lombok.Getter;
 import lombok.Setter;
 import vu.lt.entities.Racer;
 import vu.lt.entities.RacingClass;
+import vu.lt.interceptors.LoggedInvocation;
 import vu.lt.persistence.ClassesDAO;
 import vu.lt.persistence.RacersDAO;
 import vu.lt.services.CreateRandomCoPilot;
 
 @Model
-public class RacersForClass implements Serializable{
+public class RacersForClass implements Serializable {
 
     @Inject
     private ClassesDAO classesDAO;
@@ -26,10 +27,12 @@ public class RacersForClass implements Serializable{
     @Inject
     private RacersDAO racersDAO;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private RacingClass racingClass;
 
-    @Getter @Setter
+    @Getter
+    @Setter
     private Racer racerToCreate = new Racer();
 
     @PostConstruct
@@ -42,6 +45,7 @@ public class RacersForClass implements Serializable{
     }
 
     @Transactional
+    @LoggedInvocation
     public String createRacer() {
         racerToCreate.setRacingClass(this.racingClass);
         racersDAO.persist(racerToCreate);

@@ -20,4 +20,8 @@ public class RacersDAO {
     public Racer findOne(Integer id) {
         return em.find(Racer.class, id);
     }
+
+    public Racer update(Racer racer){
+        return em.merge(racer);
+    }
 }
